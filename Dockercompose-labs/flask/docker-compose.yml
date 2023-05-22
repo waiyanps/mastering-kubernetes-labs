@@ -1,0 +1,23 @@
+version: '3.6'
+services:
+  app:
+    build: 
+      context: ./app
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
+    ports:
+      - "5001:5001"
+    networks:
+      - redis_network
+  redis:
+    image: redis:3.2-alpine
+    volumes:
+      - redis_data:/data 
+    networks:
+      - redis_network
+volumes:
+    redis_data:
+networks:
+    redis_network:
