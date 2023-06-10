@@ -24,7 +24,7 @@ Services:
 
 - `Volumes` :
 
-`db_data`: Defines the named volume db_data used by the db service to persist MySQL data.
+    - `db_data`: Defines the named volume db_data used by the db service to persist MySQL data.
 
 - `Networks`:
 
