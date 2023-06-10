@@ -1,4 +1,4 @@
-This is a Docker Compose file written in version 3 format, which defines a multi-container application consisting of two services: `db` and `wordpress`. Let's go through the different sections and their meanings:
+The purpose of this README file is to provide additional information for the docker-compose.yml file, which specifies a multi-container application comprising two services: `db` and `wordpress`. Let's go through the different sections and their meanings:
 
 - ```version: '3'``` : Specifies the version of the Docker Compose file syntax being used.
 Services:
@@ -25,12 +25,16 @@ Services:
 - `Volumes` :
 
 `db_data`: Defines the named volume db_data used by the db service to persist MySQL data.
-Networks:
 
-wordpress_network: Defines the custom network wordpress_network that both services (db and wordpress) are connected to.
-Secrets:
+- `Networks`:
 
-db_root_password: Defines a secret named db_root_password that reads the value from the db_root_password.txt file.
-db_user: Defines a secret named db_user that reads the value from the db_user.txt file.
-db_password: Defines a secret named db_password that reads the value from the db_password.txt file.
+    - `wordpress_network` : Defines the custom network wordpress_network that both services (db and wordpress) are connected to.
+        
+- `Secrets`:
+
+    - `db_root_password`: Defines a secret named db_root_password that reads the value from the db_root_password.txt file.
+    - `db_user`: Defines a secret named db_user that reads the value from the db_user.txt file.
+    - `db_password`: Defines a secret named db_password that reads the value from the db_password.txt file.
+
+
 This Docker Compose file allows you to run a WordPress application connected to a MySQL database container, with secrets used for sensitive information like passwords. The volumes and networks provide data persistence and networking capabilities for the containers.
